@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot name="mbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find mbot_sim)/urdf/xacro/mbot_base_gazebo.xacro" />
+    <xacro:include filename="$(find mbot_sim)/urdf/xacro/mbot_camera_gazebo.xacro" />
+    <xacro:include filename="$(find mbot_sim)/urdf/xacro/mbot_lidar_gazebo.xacro" />
+    <xacro:include filename="$(find mbot_sim)/urdf/xacro/mbot_imu_gazebo.xacro" />
+
+
+    <xacro:property name="camera_offset_x" value="0.17" />
+    <xacro:property name="camera_offset_y" value="0" />
+    <xacro:property name="camera_offset_z" value="0.10" />
+
+
+    <xacro:property name="lidar_offset_x" value="0" />
+    <xacro:property name="lidar_offset_y" value="0" />
+    <xacro:property name="lidar_offset_z" value="0.105" />
+
+    <xacro:property name="imu_offset_x" value="0" />
+    <xacro:property name="imu_offset_y" value="0" />
+    <xacro:property name="imu_offset_z" value="0.6" />
+
+    <xacro:mbot_base_gazebo />
+
+    <!-- Camera -->
+    <joint name="camera_joint" type="fixed">
+        <origin xyz="${camera_offset_x} ${camera_offset_y} ${camera_offset_z}" rpy="0 0 0" />
+        <parent link="base_link"/>
+        <child link="camera_link"/>
+    </joint>
+
+    <!-- lidar -->
+    <joint name="lidar_joint" type="fixed"> 
+        <origin xyz="${lidar_offset_x} ${lidar_offset_y} ${lidar_offset_z}" rpy="0 0 0" />
+        <parent link="base_link"/>
+        <child link="lidar_link"/>
+    </joint>
+
+    <!-- imu -->
+    <joint name="imu_joint" type="fixed">
+        <origin xyz="${imu_offset_x} ${imu_offset_y} ${imu_offset_z}" rpy="0 0 0" />
+        <parent link="base_link"/>
+        <child link="imu_link"/>
+    </joint>
+
+    <xacro:use_camera prefix="camera"/>
+    <xacro:use_lidar prefix="lidar"/> 
+    <xacro:use_imu prefix="imu"/>
+
+</robot>

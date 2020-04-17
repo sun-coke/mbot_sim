@@ -1,0 +1,22 @@
+<launch>
+    <arg name="model" default="$(find xacro)/xacro --inorder '$(find mbot_sim)/urdf/xacro/mbot_rviz.xacro'" />
+    <arg name="gui" default="true" />
+
+    <param name="robot_description" command="$(arg model)" />
+
+    <!-- 设置GUI参数，显示关节控制插件 -->
+    <!-- param name="use_gui" value="$(arg gui)" / -->
+
+
+    <!-- 运行joint_state_publisher节点，发布机器人的关节状态  -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+
+    <!-- 运行robot_state_publisher节点，发布tf  -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+
+    <!-- 运行rviz可视化界面 args="-d $(find mbot_sim)/cfg/mbot.rviz"添加设置文件，可以加，也可以不加，不加则自己在rviz中进行设置 -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mbot_sim)/config/rviz.rviz" required="true" />
+
+</launch>
