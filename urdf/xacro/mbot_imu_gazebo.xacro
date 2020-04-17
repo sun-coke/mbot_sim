@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <robot name="imu" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:property name="imu_size"     value="0.1" />
-    <xacro:property name="imu_hight"    value="0.1" />
     <xacro:macro name="use_imu" params="prefix:=imu">
         <link name="${prefix}_link"> 
             <inertial>
@@ -16,15 +14,15 @@
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
-                    <box size="${imu_size} ${imu_size} ${imu_hight}"/>
+                    <cylinder length="0.02" radius="0.045"/>
                 </geometry>                
-                <material name="red"/>
+                <material name="black"/>
             </visual>
 
             <collision>
                 <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
                 <geometry>
-                    <box size="${imu_size} ${imu_size} ${imu_hight}"/>
+                    <cylinder length="0.02" radius="0.045"/>
                 </geometry> 
             </collision>
         </link>

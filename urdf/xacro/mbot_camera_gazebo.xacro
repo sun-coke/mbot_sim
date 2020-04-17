@@ -15,7 +15,7 @@
             <visual>
                 <origin xyz=" 0 0 0 " rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.02 0.06" />
+                    <box size="0.005 0.09 0.02" />
                 </geometry>
                 <material name="black"/>
             </visual>
@@ -23,7 +23,7 @@
             <collision>
                 <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
                 <geometry>
-                    <box size="0.01 0.04 0.04" />
+                    <box size="0.005 0.09 0.02" />
                 </geometry>
             </collision>
         </link>
