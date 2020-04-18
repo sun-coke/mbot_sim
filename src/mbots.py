@@ -122,8 +122,8 @@ if __name__=="__main__":
     if os.name != 'nt':
         settings = termios.tcgetattr(sys.stdin)
 
-    rospy.init_node('turtlebot3_teleop')
-    pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
+    rospy.init_node('mbot_teleop')
+    pub = rospy.Publisher('mbot/cmd_vel', Twist, queue_size=10)
 
     turtlebot3_model = rospy.get_param("model", "burger")
 

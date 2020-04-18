@@ -20,7 +20,7 @@
 
     <xacro:mbot_base_gazebo />
 
-    <!-- Camera -->
+    <!-- camera -->
     <joint name="camera_joint" type="fixed">
         <origin xyz="${camera_offset_x} ${camera_offset_y} ${camera_offset_z}" rpy="0 0 0" />
         <parent link="base_link"/>
@@ -31,7 +31,7 @@
     <joint name="lidar_joint" type="fixed"> 
         <origin xyz="${lidar_offset_x} ${lidar_offset_y} ${lidar_offset_z}" rpy="0 0 0" />
         <parent link="base_link"/>
-        <child link="lidar_link"/>
+        <child link="laser_link"/>
     </joint>
 
     <!-- imu -->
@@ -42,7 +42,7 @@
     </joint>
 
     <xacro:use_camera prefix="camera"/>
-    <xacro:use_lidar prefix="lidar"/> 
+    <xacro:use_laser prefix="laser"/> 
     <xacro:use_imu prefix="imu"/>
 
 </robot>

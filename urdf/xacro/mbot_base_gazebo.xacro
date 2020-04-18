@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="mbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="base" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <!-- base -->
     <xacro:property name="M_PI" value="3.1415926"/>
@@ -25,10 +25,10 @@
 
     <!-- colors -->
     <material name="yellow">
-        <color rgba="1 0.4 0 1"/>
+        <color rgba="0 0 1 1"/>
     </material>
     <material name="black">
-        <color rgba="0 0 0 0.95"/>
+        <color rgba="0 0 0 1"/>
     </material>
     <material name="gray">
         <color rgba="0.75 0.75 0.75 1"/>
@@ -207,7 +207,7 @@
                 <broadcastTF>1</broadcastTF>
                 <wheelTorque>30</wheelTorque>
                 <wheelAcceleration>1.8</wheelAcceleration>
-                <commandTopic>cmd_vel</commandTopic>
+                <commandTopic>mbot2/cmd_vel</commandTopic>
                 <odometryFrame>odom</odometryFrame> 
                 <odometryTopic>odom</odometryTopic> 
                 <robotBaseFrame>base_footprint</robotBaseFrame>

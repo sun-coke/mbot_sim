@@ -20,10 +20,10 @@
 
 <!-- Defining the colors used in this robot -->
     <material name="yellow">
-        <color rgba="1 0.4 0 1"/>
+        <color rgba="0 0 1 1"/>
     </material>
     <material name="black">
-        <color rgba="0 0 0 0.95"/>
+        <color rgba="0 0 0 1"/>
     </material>
     <material name="gray">
         <color rgba="0.75 0.75 0.75 1"/>

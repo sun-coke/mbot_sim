@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="laser">
+<robot name="laser" xmlns:xacro="http://www.ros.org/wiki/xacro" >
     
-	<xacro:macro name="use_lidar" params="prefix:=lidar">
+	<xacro:macro name="use_laser" params="prefix:=laser">
 
         <link name="${prefix}_link"> 
             <inertial>
@@ -13,7 +13,7 @@
             </inertial>
 
             <visual>
-                <origin xyz=" 0 0 0 " rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 0" />
                 <geometry>
                     <cylinder length="0.03" radius="0.030"/>
                 </geometry>
@@ -32,7 +32,7 @@
         </gazebo>
 
         <gazebo reference="${prefix}_link">
-            <sensor type="ray" name="rplidar">
+            <sensor type="ray" name="laser_node">
                 <pose>0 0 0 0 0 0</pose>
                 <visualize>false</visualize>
                 <update_rate>5.5</update_rate> 
