@@ -1,7 +1,7 @@
 <launch>
 
     <!-- 设置launch文件的参数 -->
-    <arg name="world_name" value="$(find mbot_sim)/worlds/maze.world"/>
+    <arg name="world_name" value="$(find mbot_sim)/worlds/empty.world"/>
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>
     <arg name="gui" default="true"/>
