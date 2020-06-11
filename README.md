@@ -1,5 +1,6 @@
 # mbot_sim仿真小车
 ## 目录
+```
 ├── CMakeLists.txt
 ├── config
 │   ├── cfg.rviz
@@ -45,6 +46,7 @@
     ├── maze1.world
     ├── maze2.world
     └── maze.world
+```
 
 ## A、键盘控制
 ```
