@@ -62,7 +62,11 @@ $ roslaunch mbot_sim gmapping.launch ## gmapping_slam
 $ rviz
 ```
 add->RobotModel
+
+
 Fixed Frame->base_link
+
+
 add->By topic->/map&/scan
 
 ## C、运行循线
@@ -70,7 +74,7 @@ add->By topic->/map&/scan
 $ roslaunch mbot_sim mbot_follow.launch ## 运行仿真环境（follow）
 $ rosrun mbot_sim follower_p.py
 ```
-输出偏差值曲线：
+**输出偏差值曲线：**
 rqt—>plot—>/err/data
 
 ## D、多机器人仿真与控制
@@ -83,6 +87,7 @@ $ rosrun mbot_sim mbots.py  ##多机器人控制（topic：mbot/cmd_vel）
 ## E、运行TB3迷宫仿真
 ```
 $ roslaunch mbot_sim tb3_maze.launch
+```
 
 
 
